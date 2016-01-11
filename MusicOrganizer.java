@@ -93,4 +93,15 @@ public class MusicOrganizer
             System.out.println(posicion + ".-" + filename);
         }
     }
+    
+    /**
+     * Método para listar los archivos que contengan en su nombre el String pasado por parámetro
+     */
+    public void listMatching(String cadena){
+        for (String filename : files){
+            if (filename.contains(cadena)){
+                System.out.println(filename);
+            }
+        }
+    }
 }
