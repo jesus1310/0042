@@ -109,4 +109,15 @@ public class MusicOrganizer
             System.out.println("No se han encontrado archivos que contengan la cadena " + cadena);
         }
     }
+    
+    /**
+     * Método para reproducir los primeros segundos de todas las canciones de un determinado artista pasado por parámetro
+     */
+    public void reproducirVariasCanciones(String artista){
+        for (String filename : files){
+            if (filename.contains(artista)){
+                player.playSample(filename);
+            }
+        }
+    }
 }
