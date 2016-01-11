@@ -98,10 +98,15 @@ public class MusicOrganizer
      * Método para listar los archivos que contengan en su nombre el String pasado por parámetro
      */
     public void listMatching(String cadena){
+        boolean contiene = false;
         for (String filename : files){
             if (filename.contains(cadena)){
+                contiene = true;
                 System.out.println(filename);
             }
+        }
+        if (contiene == false){
+            System.out.println("No se han encontrado archivos que contengan la cadena " + cadena);
         }
     }
 }
