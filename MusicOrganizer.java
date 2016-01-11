@@ -87,8 +87,10 @@ public class MusicOrganizer
      * Método para mostrar todos los archivos almacenados en la colección.
      */
     public void listAllFiles(){
+        int posicion = 1;
         for (String filename : files){
-            System.out.println(filename);
+            posicion = posicion + 1;
+            System.out.println(posicion + ".-" + filename);
         }
     }
 }
