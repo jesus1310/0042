@@ -13,7 +13,7 @@ public class MusicOrganizer
     private ArrayList<String> files;
     // A player for the music files.
     private MusicPlayer player;
-        
+
     /**
      * Create a MusicOrganizer
      */
@@ -22,7 +22,7 @@ public class MusicOrganizer
         files = new ArrayList<String>();
         player = new MusicPlayer();
     }
-    
+
     /**
      * Add a file to the collection.
      * @param filename The file to be added.
@@ -31,7 +31,7 @@ public class MusicOrganizer
     {
         files.add(filename);
     }
-    
+
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -40,7 +40,7 @@ public class MusicOrganizer
     {
         return files.size();
     }
-    
+
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
@@ -52,7 +52,7 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
+
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
@@ -82,7 +82,7 @@ public class MusicOrganizer
     {
         player.stop();
     }
-    
+
     /**
      * Método para mostrar todos los archivos almacenados en la colección.
      */
@@ -93,7 +93,7 @@ public class MusicOrganizer
             System.out.println(posicion + ".-" + filename);
         }
     }
-    
+
     /**
      * Método para listar los archivos que contengan en su nombre el String pasado por parámetro
      */
@@ -109,7 +109,7 @@ public class MusicOrganizer
             System.out.println("No se han encontrado archivos que contengan la cadena " + cadena);
         }
     }
-    
+
     /**
      * Método para reproducir los primeros segundos de todas las canciones de un determinado artista pasado por parámetro
      */
@@ -119,5 +119,24 @@ public class MusicOrganizer
                 player.playSample(filename);
             }
         }
+    }
+
+    /**
+     * Método que muestra por pantalla el índice del primer archivo que contiene una cadena pasada por parametro.
+     * Si no hay ninguno devolverá -1.
+     */
+    public int findFirst(String cadena){
+        boolean found = false;
+        int index = 0;
+        String encontrado = null;
+        while (!found && index < files.size()){
+            String filename = files.get(index);
+            if (filename.contains(cadena)){
+                encontrado = filename;
+                found = true;
+            }
+            index = index + 1;
+        }
+        return files.indexOf(encontrado);
     }
 }
