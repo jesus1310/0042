@@ -129,7 +129,8 @@ public class MusicOrganizer
         boolean found = false;
         int index = 0;
         String encontrado = null;
-        while (!found && index < files.size()){
+        int tamañoLista = files.size();
+        while (!found && index < tamañoLista){
             String filename = files.get(index);
             if (filename.contains(cadena)){
                 encontrado = filename;
